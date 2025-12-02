@@ -39,13 +39,12 @@ Ce portfolio a été conçu comme une "War Room" interactive. Voici les modules 
 * **Sécurité HTTP :**
     * Protection contre le Directory Listing (`Options -Indexes`).
     * Gestion des erreurs 403/404 personnalisées.
-    * Fichier `security.txt` conforme à la RFC 9116.
 * **Protection basique :** Scripts anti-clic droit et désactivation des raccourcis d'inspection (Niveau 1).
 
 ### 🐇 Easter Eggs
-* **Konami Code :** Faites `↑ ↑ ↓ ↓ ← → ← → B A` pour activer le mode Matrix "IMPEC".
-* **Self-Destruct :** Un bouton rouge dans le footer avec animation de crash système.
+* **Konami Code :** Faites `↑ ↑ ↓ ↓ ← → ← → B A` pour activer le mode Matrix.
 * **Console Logs :** Message caché pour les développeurs ouvrant F12.
+* **Page Admin :** Une page Admin avec un mot de passe caché (indice dans la console F12).
 
 ---
 
