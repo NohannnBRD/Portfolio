@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin-panel-secret
+# Bravo, tu as le premier réflexe d'un pentester !
+# Ton flag est : FLAG{N0H4N_S1SR_2025}
+# Envoie-moi ce flag par mail pour me prouver que tu as lu ceci ;)

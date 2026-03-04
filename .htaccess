@@ -1,0 +1,20 @@
+RewriteEngine On
+RewriteCond %{ENV:HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirection www vers non-www
+RewriteCond %{HTTP_HOST} ^www\.nbrd\.fr$ [NC]
+RewriteRule ^(.*)$ https://nbrd.fr/$1 [R=301,L]
+
+# Forcer HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://nbrd.fr/$1 [R=301,L]
+
+Options -Indexes
+ErrorDocument 404 /404.html
+
+# Sécurité : Simuler l'inexistence du dossier /hide/
+RedirectMatch 404 ^/hide/.*$
+
+# Rediriger les erreurs 403 (Interdit) vers la page 404
+ErrorDocument 403 /404.html

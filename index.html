@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+<!-- FLAG{cur10u5_r3cru1t3r_h4ck3r_2026} -->
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio de Nohan BROCHARD, étudiant en BTS SIO SISR. Passionné par la Cybersécurité offensive (Pentest) et l'Administration Système (Windows/Linux). Découvrez mes projets et certifications.">
+    <meta name="keywords"
+        content="Nohan BROCHARD, BTS SIO, SISR, Pentester, Cybersécurité, Alternance, Stage, Administrateur Système, OSINT, Active Directory, Nîmes, Montpellier">
+    <meta name="author" content="Nohan BROCHARD">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="google-site-verification" content="PDvjzx-AP3m1w_lf30KWbew-xCsxXNqM2os1PQ2xn08" />
+    <link rel="icon" href="https://nbrd.fr/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://nbrd.fr/img/favicon.svg">
+    <title>Nohan BROCHARD | Portfolio BTS SIO SISR & Pentest</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nbrd.fr/">
+    <meta property="og:title" content="Nohan BROCHARD | Portfolio SISR & Pentest">
+    <meta property="og:description"
+        content="Étudiant BTS SIO passionné par la Cybersécurité offensive. Découvrez mes projets, ma veille et mes compétences (Active Directory, Pentest, OSINT).">
+    <meta property="og:image" content="https://nbrd.fr/img/social-preview.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nbrd.fr/">
+    <meta property="twitter:title" content="Nohan BROCHARD | Portfolio SISR & Pentest">
+    <meta property="twitter:description"
+        content="Étudiant BTS SIO passionné par la Cybersécurité offensive. Découvrez mes projets, ma veille et mes compétences.">
+    <meta property="twitter:image" content="https://nbrd.fr/img/social-preview.png">
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',   // Indigo
+                        secondary: '#8b5cf6', // Violet
+                        accent: '#06b6d4',    // Cyan
+                        dark: '#0f172a',      // Slate 900
+                        'dark-lighter': '#1e293b' // Slate 800
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+    <style>
+        :root {
+            --color-primary: #6366f1;
+            --color-secondary: #8b5cf6;
+            --color-accent: #06b6d4;
+            --color-primary-rgb: 99, 102, 241;
+            --color-accent-rgb: 6, 182, 212;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #020617;
+            color: #e2e8f0;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(var(--color-primary-rgb), 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(var(--color-accent-rgb), 0.08) 0%, transparent 25%);
+            background-attachment: fixed;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary);
+        }
+
+        /* Nav Link Animation */
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--color-accent);
+        }
+
+        /* Couleur de sélection personnalisée */
+        ::selection {
+            background-color: var(--color-accent);
+            color: #0f172a;
+            text-shadow: none;
+        }
+
+        ::-moz-selection {
+            background-color: var(--color-accent);
+            color: #0f172a;
+        }
+
+        /* Color Palette Picker */
+        .color-palette {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 16px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 100;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .color-palette.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .color-palette-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 6px;
+        }
+
+        .theme-option:last-child {
+            margin-bottom: 0;
+        }
+
+        .theme-option:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .theme-option.active {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .theme-colors {
+            display: flex;
+            gap: 4px;
+        }
+
+        .theme-color-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .theme-option:hover .theme-color-dot {
+            transform: scale(1.1);
+        }
+
+        .theme-name {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+
+        .logo-wrapper {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="particles-canvas" class="fixed inset-0 z-0 pointer-events-none opacity-40"></canvas>
+
+    <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/5">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="logo-wrapper">
+                        <div id="shield-logo" class="relative group cursor-pointer" title="Changer les couleurs">
+                            <div
+                                class="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-500">
+                            </div>
+
+                            <div
+                                class="relative w-10 h-10 rounded-xl bg-dark-lighter border border-white/10 flex items-center justify-center overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition duration-500">
+                                </div>
+
+                                <svg class="w-6 h-6 text-gray-200 group-hover:text-white transition transform group-hover:scale-110 duration-300"
+                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L3 7V12C3 17.52 6.84 22.74 12 24C17.16 22.74 21 17.52 21 12V7L12 2Z"
+                                        stroke="url(#logo-gradient)" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M12 8V16M12 16L9 13M12 16L15 13" stroke="url(#logo-gradient)"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <circle cx="12" cy="16" r="2" fill="url(#logo-gradient)" />
+
+                                    <defs>
+                                        <linearGradient id="logo-gradient" x1="3" y1="2" x2="21" y2="24"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop id="gradient-stop-1" stop-color="#6366f1" />
+                                            <stop id="gradient-stop-2" offset="1" stop-color="#06b6d4" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Color Palette Picker -->
+                        <div id="color-palette" class="color-palette">
+                            <div class="color-palette-title">
+                                <i class="ri-palette-line"></i>
+                                Thème de couleur
+                            </div>
+                            <div id="theme-options"></div>
+                        </div>
+                    </div>
+                    <span class="text-lg font-bold tracking-tight">Nohan<span class="text-accent">.dev</span></span>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+                    <a href="#accueil" class="nav-link text-gray-400 hover:text-white">Accueil</a>
+                    <a href="#a-propos" class="nav-link text-gray-400 hover:text-white">À propos</a>
+                    <a href="#formation" class="nav-link text-gray-400 hover:text-white">Parcours</a>
+                    <a href="#competences" class="nav-link text-gray-400 hover:text-white">Compétences</a>
+                    <a href="#projets" class="nav-link text-gray-400 hover:text-white">Projets</a>
+                    <a href="#epreuves" class="nav-link text-gray-400 hover:text-white">Epreuves</a>
+                    <a href="#veille" class="nav-link text-gray-400 hover:text-white">Veille</a>
+                    <a href="#contact"
+                        class="px-5 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium text-accent">Contact</a>
+                </div>
+
+                <button id="mobile-menu-button" class="lg:hidden p-2 text-gray-300" aria-label="Ouvrir le menu mobile">
+                    <i class="ri-menu-4-line text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-dark/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex flex-col h-full justify-center items-center space-y-8 p-8">
+            <button id="close-menu" class="absolute top-6 right-6 text-gray-400 hover:text-white"
+                aria-label="Fermer le menu mobile">
+                <i class="ri-close-line text-3xl"></i>
+            </button>
+            <a href="#accueil" class="text-2xl mobile-link">Accueil</a>
+            <a href="#a-propos" class="text-2xl mobile-link">À propos</a>
+            <a href="#formation" class="text-2xl mobile-link">Parcours</a>
+            <a href="#competences" class="text-2xl mobile-link">Compétences</a>
+            <a href="#projets" class="text-2xl mobile-link">Projets</a>
+            <a href="#epreuves" class="text-2xl mobile-link">Épreuves</a>
+            <a href="#contact" class="text-2xl mobile-link text-accent">Contact</a>
+        </div>
+    </div>
+
+    <main>
+        <section id="accueil" class="min-h-screen flex items-center justify-center relative pt-20">
+            <div id="blob-primary" class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-[100px] animate-pulse"
+                style="background-color: rgba(var(--color-primary-rgb), 0.2);">
+            </div>
+            <div id="blob-accent"
+                class="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full blur-[100px] animate-pulse"
+                style="background-color: rgba(var(--color-accent-rgb), 0.2); animation-delay: 1s;"></div>
+
+            <div
+                class="container mx-auto px-6 relative z-10 text-center lg:text-left lg:flex lg:items-center lg:gap-16">
+                <div class="lg:w-1/2 space-y-6">
+                    <div
+                        class="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-mono mb-2">
+                        <i class="ri-terminal-box-line mr-2"></i>Technicien IT
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
+                        Sécuriser <br>
+                        <span class="gradient-text typewrite" data-period="2000"
+                            data-type='[ "l&apos;Infrastructure", "le Réseau", "la Data", "le Périmètre" ]'></span>
+                    </h1>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0">
+                        Étudiant SISR passionné par le <strong class="text-white">Pentesting</strong> et la
+                        cybersécurité offensive.
+                        En route vers la DGSI.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#projets"
+                            class="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:opacity-90 transition shadow-lg shadow-primary/25 flex items-center justify-center gap-2">
+                            <i class="ri-eye-line"></i> Voir mes projets
+                        </a>
+                        <a href="/doc/cv/CV_IT.pdf" target="_blank"
+                            class="px-8 py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition font-medium flex items-center justify-center gap-2">
+                            <i class="ri-file-user-line"></i> CV
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
+                    <div class="relative w-72 h-72 lg:w-96 lg:h-96 animate-float">
+                        <div
+                            class="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-accent blur-2xl opacity-30">
+                        </div>
+                        <div
+                            class="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10 p-2 bg-white/5 backdrop-blur-sm">
+                            <img src="/img/pdp.jpg" alt="Nohan"
+                                class="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="a-propos" class="py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="glass-card p-8 md:p-12">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                        <div class="space-y-8">
+                            <div>
+                                <h2 class="text-3xl font-bold mb-6"><span class="text-accent">01.</span> À Propos</h2>
+                                <p class="text-gray-300 leading-relaxed mb-4">
+                                    Actuellement en <strong class="text-white">BTS SIO option SISR</strong> chez Keyce
+                                    Academy et en alternance chez <strong class="text-white">ABTEL
+                                        INFORMATIQUE</strong>.
+                                </p>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Au-delà de l'administration système classique, je me forme intensivement en
+                                    autodidacte
+                                    sur les aspects offensifs de la sécurité (OSINT, Signaux, CTF).
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3
+                                    class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center">
+                                    <i class="ri-flashlight-line text-accent mr-2"></i> Focus Technique
+                                </h3>
+                                <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm font-mono text-gray-400">
+                                    <li class="flex items-center group">
+                                        <i
+                                            class="ri-arrow-right-s-line text-accent mr-2 group-hover:translate-x-1 transition"></i>
+                                        Pentesting
+                                    </li>
+                                    <li class="flex items-center group">
+                                        <i
+                                            class="ri-arrow-right-s-line text-accent mr-2 group-hover:translate-x-1 transition"></i>
+                                        Windows Server
+                                    </li>
+                                    <li class="flex items-center group">
+                                        <i
+                                            class="ri-arrow-right-s-line text-accent mr-2 group-hover:translate-x-1 transition"></i>
+                                        Linux Hardening
+                                    </li>
+                                    <li class="flex items-center group">
+                                        <i
+                                            class="ri-arrow-right-s-line text-accent mr-2 group-hover:translate-x-1 transition"></i>
+                                        Network Infra
+                                    </li>
+                                    <li class="flex items-center group">
+                                        <i
+                                            class="ri-arrow-right-s-line text-accent mr-2 group-hover:translate-x-1 transition"></i>
+                                        DuckScript
+                                    </li>
+                                    <li class="flex items-center group">
+                                        <i
+                                            class="ri-arrow-right-s-line text-accent mr-2 group-hover:translate-x-1 transition"></i>
+                                        OSINT
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="w-full">
+                            <div
+                                class="bg-[#1e1e1e] rounded-xl shadow-2xl border border-gray-700 overflow-hidden font-mono text-sm md:text-base transform hover:scale-[1.02] transition-transform duration-300">
+
+                                <div
+                                    class="bg-[#2d2d2d] px-4 py-3 flex items-center justify-between border-b border-gray-700">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3.5 h-3.5 rounded-full bg-red-500"></div>
+                                        <div class="w-3.5 h-3.5 rounded-full bg-yellow-500"></div>
+                                        <div class="w-3.5 h-3.5 rounded-full bg-green-500"></div>
+                                    </div>
+                                    <div class="text-gray-500 text-xs select-none">guest@nbrd-shell:~</div>
+                                    <div class="w-10"></div>
+                                </div>
+
+                                <div id="terminal-body"
+                                    class="p-6 h-[450px] overflow-y-auto text-gray-300 space-y-2 cursor-text scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent"
+                                    onclick="document.getElementById('term-input').focus()">
+
+                                    <div class="mb-6">
+                                        <span class="text-green-500 font-bold">Welcome to Nohan Shell v1.2.0</span><br>
+                                        <span class="text-gray-500 text-xs">Connected: 127.0.0.1 (Localhost)</span><br>
+                                        Type <span class="text-white font-bold">'help'</span> to start.
+                                    </div>
+
+                                    <div id="terminal-output"></div>
+
+                                    <div class="flex items-center">
+                                        <span class="text-green-500 mr-2 font-bold">➜</span>
+                                        <span class="text-cyan-400 mr-2 font-bold">~</span>
+                                        <input type="text" id="term-input"
+                                            class="bg-transparent border-none outline-none flex-1 text-white w-full font-mono placeholder-gray-700"
+                                            autocomplete="off" spellcheck="false">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="formation" class="py-24 px-6 bg-dark-lighter/30">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12"><span class="text-accent">02.</span> Parcours</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                            <i class="ri-briefcase-4-line text-accent mr-3"></i>Expériences Pros
+                        </h3>
+
+                        <div class="relative border-l border-white/10 ml-3 space-y-8">
+                            <div class="relative pl-8">
+                                <div
+                                    class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_10px_#06b6d4]">
+                                </div>
+                                <div class="glass-card p-6 hover:bg-white/5 transition duration-300">
+                                    <span
+                                        class="inline-block px-3 py-1 rounded bg-accent/10 text-accent text-xs font-mono mb-3 border border-accent/20">2024
+                                        - Présent</span>
+                                    <h4 class="text-xl font-bold text-white">Technicien Informatique (Alternance)</h4>
+                                    <p class="text-gray-400 mb-3 text-sm font-medium">ABTEL INFORMATIQUE • Bouillargues
+                                    </p>
+                                    <ul
+                                        class="text-gray-300 text-sm space-y-2 list-disc list-inside marker:text-accent">
+                                        <li>Support technique (Niveau 1-2) sur parcs de +500 clients.</li>
+                                        <li>Administration : Active Directory, GPO, Windows Server.</li>
+                                        <li>Virtualisation & Sauvegarde : VMware ESXi, Veeam Backup.</li>
+                                        <li>Réseau & Sécurité : Supervision (Zabbix), gestion Antivirus/EDR,
+                                            sensibilisation.</li>
+                                        <li>Documentation : Rédaction de procédures et bases de connaissances.</li>
+                                        <li>Matient de l'opérationnel.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                            <i class="ri-graduation-cap-line text-primary mr-3"></i>Diplômes
+                        </h3>
+
+                        <div class="relative border-l border-white/10 ml-3 space-y-8">
+
+                            <div class="relative pl-8">
+                                <div
+                                    class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_10px_#06b6d4]">
+                                </div>
+                                <div class="glass-card p-6 hover:bg-white/5 transition duration-300">
+                                    <span
+                                        class="inline-block px-3 py-1 rounded bg-accent/10 text-accent text-xs font-mono mb-3 border border-accent/20">Rentrée
+                                        Septembre 2026</span>
+                                    <h4 class="text-xl font-bold text-white">Bachelor Cybersécurité</h4>
+                                    <p class="text-gray-400 text-sm">Ynov Campus • Montpellier</p>
+                                    <p class="text-gray-500 text-xs mt-2">Rentrée en 3ème année du Bachelor
+                                        Cybersécurité.</p>
+                                </div>
+                            </div>
+
+                            <div class="relative pl-8">
+                                <div
+                                    class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_#6366f1]">
+                                </div>
+                                <div class="glass-card p-6 hover:bg-white/5 transition duration-300">
+                                    <span
+                                        class="inline-block px-3 py-1 rounded bg-primary/10 text-primary text-xs font-mono mb-3 border border-primary/20">2023
+                                        - 2026</span>
+                                    <h4 class="text-xl font-bold text-white">BTS SIO Option SISR</h4>
+                                    <p class="text-gray-400 text-sm">Keyce Academy • Nîmes</p>
+                                    <p class="text-gray-500 text-xs mt-2">Services Informatiques aux Organisations
+                                        (Solutions d'Infrastructure).</p>
+                                </div>
+                            </div>
+
+                            <div class="relative pl-8">
+                                <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                                <div class="glass-card p-6 hover:bg-white/5 transition duration-300">
+                                    <span class="text-gray-500 text-xs font-mono mb-1 block">2021 - 2023</span>
+                                    <h4 class="text-lg font-bold text-gray-200">BTS SNEC</h4>
+                                    <p class="text-gray-500 text-sm">Lycée Dhuoda • Nîmes</p>
+                                    <p class="text-gray-500 text-xs mt-2">Systèmes Numériques option Électronique et
+                                        Communications.</p>
+                                </div>
+                            </div>
+
+                            <div class="relative pl-8">
+                                <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                                <div class="glass-card p-6 hover:bg-white/5 transition duration-300">
+                                    <span class="text-gray-500 text-xs font-mono mb-1 block">2019 - 2021</span>
+                                    <h4 class="text-lg font-bold text-gray-200">Baccalauréat STI2D</h4>
+                                    <p class="text-gray-500 text-sm">Lycée Dhuoda • Nîmes</p>
+                                    <p class="text-gray-500 text-xs mt-2">Mention Assez Bien.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="competences" class="py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center"><span class="text-accent">03.</span> Arsenal Technique
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+                    <div class="glass-card p-6 hover:bg-white/5 transition duration-300">
+                        <h3 class="flex items-center text-xl font-bold mb-6 text-primary">
+                            <i class="ri-server-line mr-3 text-2xl"></i>Systèmes & Services
+                        </h3>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-400 font-mono mb-2 uppercase tracking-wider">Environnements</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-primary/10 border border-primary/20 text-sm text-gray-200">Windows
+                                    Server</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-primary/10 border border-primary/20 text-sm text-gray-200">Linux
+                                    (Debian/Ubuntu)</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-primary/10 border border-primary/20 text-sm text-gray-200">Active
+                                    Directory</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400 font-mono mb-2 uppercase tracking-wider">Virtualisation &
+                                Web</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-sm text-gray-300">VMware
+                                    vSphere</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-sm text-gray-300">Hyper-V</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-sm text-gray-300">IIS
+                                    / Apache</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 hover:bg-white/5 transition duration-300">
+                        <h3 class="flex items-center text-xl font-bold mb-6 text-accent">
+                            <i class="ri-shield-check-line mr-3 text-2xl"></i>Réseaux & Sécurité
+                        </h3>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-400 font-mono mb-2 uppercase tracking-wider">Architecture</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-accent/10 border border-accent/20 text-sm text-gray-200">Cisco
+                                    IOS</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-accent/10 border border-accent/20 text-sm text-gray-200">VLAN
+                                    / Routage</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-accent/10 border border-accent/20 text-sm text-gray-200">TCP/IP</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400 font-mono mb-2 uppercase tracking-wider">Défense</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-sm text-gray-300">pfSense
+                                    / WatchGuard</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-sm text-gray-300">VPN
+                                    IPsec</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-sm text-gray-300">Backup</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 hover:bg-white/5 transition duration-300">
+                        <h3 class="flex items-center text-xl font-bold mb-6 text-secondary">
+                            <i class="ri-terminal-box-line mr-3 text-2xl"></i>Scripting & Outils
+                        </h3>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-400 font-mono mb-2 uppercase tracking-wider">Automatisation</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-secondary/10 border border-secondary/20 text-sm text-gray-200">PowerShell</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-secondary/10 border border-secondary/20 text-sm text-gray-200">Bash</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-secondary/10 border border-secondary/20 text-sm text-gray-200">Python</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400 font-mono mb-2 uppercase tracking-wider">Supervision</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-sm text-gray-300">Zabbix</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-sm text-gray-300">GLPI</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-sm text-gray-300">Git</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="glass-card p-6 bg-gradient-to-br from-secondary/10 via-transparent to-transparent border-secondary/20 hover:border-secondary/40 transition duration-300">
+                        <h3 class="flex items-center text-xl font-bold mb-6 text-white">
+                            <i class="ri-spy-line mr-3 text-2xl text-red-400"></i>Ops & Recherche
+                        </h3>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-400 font-mono mb-2 uppercase tracking-wider">Hacking Éthique</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-red-500/10 border border-red-500/20 text-sm text-gray-200">OSINT</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-red-500/10 border border-red-500/20 text-sm text-gray-200">CTF</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-red-500/10 border border-red-500/20 text-sm text-gray-200">Pentest</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400 font-mono mb-2 uppercase tracking-wider">Hardware</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-sm text-gray-300">Flipper
+                                    Zero</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-white/5 border border-white/10 text-sm text-gray-300">SubGHz
+                                    / NFC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card p-8 mt-6 bg-gradient-to-r from-dark-lighter to-transparent border-t border-white/10">
+                    <div class="flex items-center mb-8">
+                        <div
+                            class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mr-4 border border-yellow-500/20">
+                            <i class="ri-award-fill text-2xl text-yellow-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Certifications & Validations</h3>
+                            <p class="text-gray-400 text-sm">Formations certifiantes et parcours complétés</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+                        <div>
+                            <h4
+                                class="text-sm font-mono text-primary uppercase tracking-wider mb-6 border-b border-white/10 pb-2">
+                                Cybersécurité & Gestion
+                            </h4>
+                            <ul class="space-y-6">
+                                <li class="flex items-start group">
+                                    <i
+                                        class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3 text-lg group-hover:scale-110 transition"></i>
+                                    <div>
+                                        <strong class="block text-white text-lg">EBIOS Risk Manager</strong>
+                                        <span class="text-sm text-gray-400 block mb-1">Club EBIOS • Octobre 2025</span>
+                                        <a href="/doc/certification/cert_ebios.pdf" target="_blank"
+                                            class="text-xs inline-flex items-center text-gray-500 hover:text-white transition mt-1">
+                                            <i class="ri-file-pdf-line mr-1"></i> Voir le diplôme
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="flex items-start group">
+                                    <i
+                                        class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3 text-lg group-hover:scale-110 transition"></i>
+                                    <div>
+                                        <strong class="block text-white text-lg">SecNumacadémie</strong>
+                                        <span class="text-sm text-gray-400 block mb-1">ANSSI (4 Modules) • Février
+                                            2025</span>
+                                        <p class="text-xs text-gray-500 mb-1">Sécurité des systèmes d'information (MOOC)
+                                        </p>
+                                        <a href="/doc/certification/cert_anssi.pdf" target="_blank"
+                                            class="text-xs inline-flex items-center text-gray-500 hover:text-white transition">
+                                            <i class="ri-file-pdf-line mr-1"></i> Voir le diplôme
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="flex items-start group">
+                                    <i
+                                        class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3 text-lg group-hover:scale-110 transition"></i>
+                                    <div>
+                                        <strong class="block text-white text-lg">Introduction to OSINT</strong>
+                                        <span class="text-sm text-gray-400 block mb-1">Security Blue Team • 2024</span>
+                                        <a href="/doc/certification/cert_osint.pdf" target="_blank"
+                                            class="text-xs inline-flex items-center text-gray-500 hover:text-white transition mt-1">
+                                            <i class="ri-file-pdf-line mr-1"></i> Voir le diplôme
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4
+                                class="text-sm font-mono text-secondary uppercase tracking-wider mb-6 border-b border-white/10 pb-2">
+                                Pentest & Projets
+                            </h4>
+                            <ul class="space-y-6">
+
+                                <li class="flex items-start group">
+                                    <i
+                                        class="ri-checkbox-circle-fill text-secondary mt-1 mr-3 text-lg group-hover:scale-110 transition"></i>
+                                    <div>
+                                        <strong class="block text-white text-lg">Pre-Security Certificate</strong>
+                                        <span class="text-sm text-gray-400 block mb-2">TryHackMe • Octobre 2025</span>
+
+                                        <div class="flex flex-wrap gap-3">
+                                            <a href="https://tryhackme.com/certificate/THM-U3JR8ADPQO" target="_blank"
+                                                class="text-xs inline-flex items-center px-2 py-1 rounded bg-secondary/10 border border-secondary/20 text-secondary hover:bg-secondary/20 transition">
+                                                <i class="ri-shield-check-line mr-1.5"></i> Vérifier ID
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="flex items-start group">
+                                    <i
+                                        class="ri-checkbox-circle-fill text-secondary mt-1 mr-3 text-lg group-hover:scale-110 transition"></i>
+                                    <div>
+                                        <strong class="block text-white text-lg">Learning Expedition Morocco</strong>
+                                        <span class="text-sm text-gray-400 block mb-1">Collège de Paris • Sept.
+                                            2025</span>
+                                        <p class="text-xs text-gray-500 mb-1">Projet Pentest & OSINT (Compétences
+                                            validées)</p>
+                                        <a href="/doc/certification/cert_lex.pdf" target="_blank"
+                                            class="text-xs inline-flex items-center text-gray-500 hover:text-white transition">
+                                            <i class="ri-file-pdf-line mr-1"></i> Voir le diplôme
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <p
+                        class="text-sm text-gray-400 font-mono mb-6 uppercase tracking-wider flex items-center justify-center gap-2">
+                        <span class="w-8 h-[1px] bg-white/10"></span>
+                        Classements en Temps Réel
+                        <span class="w-8 h-[1px] bg-white/10"></span>
+                    </p>
+
+                    <div class="flex flex-wrap justify-center items-center gap-8">
+
+                        <div class="group relative inline-block rounded-xl">
+
+                            <div
+                                class="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-blue-600 rounded-xl blur opacity-30 group-hover:opacity-80 transition duration-500">
+                            </div>
+
+                            <div class="relative overflow-hidden rounded-xl bg-[#1e293b] border border-white/10 shadow-xl"
+                                style="width: 328px; height: 86px;">
+                                <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=5816574"
+                                    style="border:none;" class="w-full h-full" scrolling="no">
+                                </iframe>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projets" class="py-24 px-6 bg-dark-lighter/30">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-end justify-between mb-12">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-2"><span class="text-accent">04.</span> Mini
+                            Projets</h2>
+                        <p class="text-gray-400">Travaux pratiques, laboratoires et défis.</p>
+                    </div>
+                    <a href="https://github.com/NohannnBRD"
+                        class="hidden md:flex items-center text-sm text-accent hover:text-white transition">
+                        GitHub <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <article class="glass-card group overflow-hidden h-full flex flex-col">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">Lab Active Directory</h3>
+                            <p class="text-gray-400 text-sm mb-4 flex-1">Déploiement domaine Windows Server 2022. GPO,
+                                DNS, DHCP.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs text-gray-500 font-mono">#Windows</span>
+                                <span class="text-xs text-gray-500 font-mono">#Powershell</span>
+                            </div>
+
+                            <button onclick="openProjectModal('ad')"
+                                class="mt-auto w-full py-2.5 rounded-lg bg-white/5 border border-white/10 hover:bg-primary/10 hover:border-primary/30 transition-all flex items-center justify-center gap-2 text-sm font-medium text-gray-300 hover:text-white group-hover:shadow-lg group-hover:shadow-primary/10">
+                                <i class="ri-slideshow-line text-accent text-lg"></i>
+                                Détails du projet
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="glass-card group overflow-hidden h-full flex flex-col">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">Serveur DHCP</h3>
+                            <p class="text-gray-400 text-sm mb-4 flex-1">Configuration des étendues, baux, réservations
+                                d'adresses et options de routage.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs text-gray-500 font-mono">#Réseau</span>
+                                <span class="text-xs text-gray-500 font-mono">#Infra</span>
+                            </div>
+
+                            <button onclick="openProjectModal('dhcp')"
+                                class="mt-auto w-full py-2.5 rounded-lg bg-white/5 border border-white/10 hover:bg-primary/10 hover:border-primary/30 transition-all flex items-center justify-center gap-2 text-sm font-medium text-gray-300 hover:text-white group-hover:shadow-lg group-hover:shadow-primary/10">
+                                <i class="ri-slideshow-line text-accent text-lg"></i>
+                                Détails du projet
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="glass-card group overflow-hidden h-full flex flex-col">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">Serveur GLPI</h3>
+                            <p class="text-gray-400 text-sm mb-4 flex-1">Installation d'un serveur Web Apache2 avec GLPI
+                                sur Ubuntu.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs text-gray-500 font-mono">#Ticketing</span>
+                                <span class="text-xs text-gray-500 font-mono">#GLPI-Agent</span>
+                            </div>
+
+                            <button onclick="openProjectModal('glpi')"
+                                class="mt-auto w-full py-2.5 rounded-lg bg-white/5 border border-white/10 hover:bg-primary/10 hover:border-primary/30 transition-all flex items-center justify-center gap-2 text-sm font-medium text-gray-300 hover:text-white group-hover:shadow-lg group-hover:shadow-primary/10">
+                                <i class="ri-slideshow-line text-accent text-lg"></i>
+                                Détails du projet
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="glass-card group overflow-hidden h-full flex flex-col">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">Déploiement MDT</h3>
+                            <p class="text-gray-400 text-sm mb-4 flex-1">Industrialisation du déploiement de postes
+                                (Master) via WDS et PXE.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs text-gray-500 font-mono">#Windows</span>
+                                <span class="text-xs text-gray-500 font-mono">#Automation</span>
+                            </div>
+
+                            <button onclick="openProjectModal('mdt')"
+                                class="mt-auto w-full py-2.5 rounded-lg bg-white/5 border border-white/10 hover:bg-primary/10 hover:border-primary/30 transition-all flex items-center justify-center gap-2 text-sm font-medium text-gray-300 hover:text-white group-hover:shadow-lg group-hover:shadow-primary/10">
+                                <i class="ri-slideshow-line text-accent text-lg"></i>
+                                Détails du projet
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="glass-card group overflow-hidden h-full flex flex-col">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">Serveur DNS</h3>
+                            <p class="text-gray-400 text-sm mb-4 flex-1">Configuration de zones directes/inverses et
+                                redirecteurs conditionnels.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs text-gray-500 font-mono">#Network</span>
+                                <span class="text-xs text-gray-500 font-mono">#Infra</span>
+                            </div>
+
+                            <button onclick="openProjectModal('dns')"
+                                class="mt-auto w-full py-2.5 rounded-lg bg-white/5 border border-white/10 hover:bg-primary/10 hover:border-primary/30 transition-all flex items-center justify-center gap-2 text-sm font-medium text-gray-300 hover:text-white group-hover:shadow-lg group-hover:shadow-primary/10">
+                                <i class="ri-slideshow-line text-accent text-lg"></i>
+                                Détails du projet
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="epreuves" class="py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center"><span class="text-accent">05.</span> Épreuves BTS</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div class="glass-card p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2 flex items-center">
+                            <i class="ri-server-line mr-3 text-primary"></i>Épreuve E5
+                        </h3>
+                        <p class="text-gray-400 mb-6">Support et mise à disposition de services informatiques.</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                            <a href="/doc/e5/TABLEAU_SYNTHESE.pdf" target="_blank"
+                                class="flex items-center p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-accent/30 transition group">
+                                <div
+                                    class="mr-4 p-3 rounded-lg bg-blue-500/10 text-blue-400 group-hover:bg-blue-500/20 group-hover:text-white transition">
+                                    <i class="ri-table-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-200 group-hover:text-white transition">
+                                        Tableau de synthèse</h4>
+                                    <p class="text-xs text-gray-500">Document PDF</p>
+                                </div>
+                            </a>
+
+                            <a href="https://gamma.app/docs/ABTEL-INFORMATIQUE-jzo681ww15ps33z" target="_blank"
+                                class="flex items-center p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-accent/30 transition group">
+                                <div
+                                    class="mr-4 p-3 rounded-lg bg-orange-500/10 text-orange-400 group-hover:bg-orange-500/20 group-hover:text-white transition">
+                                    <i class="ri-slideshow-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-200 group-hover:text-white transition">
+                                        Présentation</h4>
+                                    <p class="text-xs text-gray-500">Support Gamma</p>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2 flex items-center">
+                            <i class="ri-router-line mr-3 text-accent"></i>Épreuve E6
+                        </h3>
+                        <p class="text-gray-400 mb-6">Parcours de professionnalisation et documents de synthèse.</p>
+
+                        <h4 class="text-lg font-bold text-white mb-4 border-b border-white/5 pb-2">Projet 1</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+
+                            <a href="/doc/e6/Annexes 9 - Epreuve E6 - Nohan BROCHARD.pdf" target="_blank"
+                                class="flex items-center p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-accent/30 transition group">
+                                <div
+                                    class="mr-4 p-3 rounded-lg bg-blue-500/10 text-blue-400 group-hover:bg-blue-500/20 group-hover:text-white transition">
+                                    <i class="ri-file-list-3-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-200 group-hover:text-white transition">
+                                        L'Annexe</h4>
+                                    <p class="text-xs text-gray-500">Document administratif</p>
+                                </div>
+                            </a>
+
+                            <a href="/doc/e6/Documentation - Manuel Utilisateur.pdf" target="_blank"
+                                class="flex items-center p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-accent/30 transition group">
+                                <div
+                                    class="mr-4 p-3 rounded-lg bg-green-500/10 text-green-400 group-hover:bg-green-500/20 group-hover:text-white transition">
+                                    <i class="ri-book-open-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-200 group-hover:text-white transition">Manuel
+                                        Utilisateur</h4>
+                                    <p class="text-xs text-gray-500">Documentation</p>
+                                </div>
+                            </a>
+
+                            <a href="/doc/e6/Documentation - Rapport de tests.pdf" target="_blank"
+                                class="flex items-center p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-accent/30 transition group">
+                                <div
+                                    class="mr-4 p-3 rounded-lg bg-orange-500/10 text-orange-400 group-hover:bg-orange-500/20 group-hover:text-white transition">
+                                    <i class="ri-test-tube-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-200 group-hover:text-white transition">
+                                        Rapport de Tests</h4>
+                                    <p class="text-xs text-gray-500">Documentation</p>
+                                </div>
+                            </a>
+
+                            <a href="/doc/e6/Documentation - Technique.pdf" target="_blank"
+                                class="flex items-center p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-accent/30 transition group">
+                                <div
+                                    class="mr-4 p-3 rounded-lg bg-purple-500/10 text-purple-400 group-hover:bg-purple-500/20 group-hover:text-white transition">
+                                    <i class="ri-code-s-slash-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-200 group-hover:text-white transition">Doc.
+                                        Technique</h4>
+                                    <p class="text-xs text-gray-500">Documentation</p>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <h4 class="text-lg font-bold text-white mb-4 border-b border-white/5 pb-2">Projet 2</h4>
+                        <div
+                            class="flex items-center justify-center p-6 rounded-xl bg-white/5 border border-white/5 border-dashed">
+                            <p class="text-gray-500 italic text-sm">Documents à venir...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="veille" class="py-24 px-6 bg-dark-lighter/30">
+            <div class="max-w-6xl mx-auto">
+
+                <div class="flex flex-col md:flex-row items-end justify-between mb-8 gap-4">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-2"><span class="text-accent">05.</span> Veille
+                            Cyber</h2>
+                        <p class="text-gray-400">Actualités triées par source.</p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="refreshFeed()" id="refresh-btn"
+                            class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm text-gray-300 hover:text-white group">
+                            <i class="ri-refresh-line text-lg group-hover:rotate-180 transition-transform duration-700"
+                                id="refresh-icon"></i>
+                            <span>Actualiser</span>
+                        </button>
+
+                        <button onclick="openThreatMap()"
+                            class="flex items-center gap-2 px-4 py-2 rounded-lg bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 transition text-sm text-red-400 hover:text-white group">
+                            <i class="ri-radar-line text-lg animate-pulse"></i>
+                            <span>Live Map</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-4 mb-8 border-b border-white/10 pb-4">
+                    <button onclick="switchTab('anssi')" id="tab-anssi"
+                        class="tab-btn active px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 bg-red-500/10 text-red-400 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.2)]">
+                        <i class="ri-government-line mr-2"></i> ANSSI (CERT-FR)
+                    </button>
+
+                    <button onclick="switchTab('itconnect')" id="tab-itconnect"
+                        class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 border border-transparent">
+                        <i class="ri-server-line mr-2"></i> IT-Connect
+                    </button>
+
+                    <button onclick="switchTab('thn')" id="tab-thn"
+                        class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 border border-transparent">
+                        <i class="ri-global-line mr-2"></i> The Hacker News
+                    </button>
+                </div>
+
+                <div id="rss-feed-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 min-h-[300px]">
+                    <div class="col-span-full flex flex-col items-center justify-center py-10 text-gray-500">
+                        <i class="ri-loader-4-line text-4xl animate-spin mb-3"></i>
+                        Chargement des données...
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="pt-24 pb-6 px-6 relative">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8">Me contacter</h2>
+
+                <p class="text-gray-400 mb-10 max-w-xl mx-auto">
+                    Ouvert aux opportunités de stage et d'alternance en Cybersécurité.
+                    Retrouvez-moi par mail ou sur les réseaux professionnels.
+                </p>
+
+                <form id="contact-form" action="https://formspree.io/f/xreawvvg" method="POST"
+                    class="max-w-xl mx-auto space-y-4 mb-10 text-left">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Nom</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full bg-[#1e293b]/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full bg-[#1e293b]/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                            class="w-full bg-[#1e293b]/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition"></textarea>
+                    </div>
+                    <div class="text-center pt-2">
+                        <button type="submit"
+                            class="px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-90 transition shadow-lg flex items-center justify-center gap-2 mx-auto w-full md:w-auto disabled:opacity-50">
+                            <i class="ri-send-plane-fill text-xl"></i> Envoyer le message
+                        </button>
+                    </div>
+                </form>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="mailto:contact@nbrd.fr"
+                        class="w-full sm:w-auto px-6 py-3 text-base font-semibold text-white bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition flex items-center justify-center group">
+                        <i class="ri-mail-send-line mr-2 text-gray-400 group-hover:text-white transition text-xl"></i>
+                        Contact par Mail
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/nohanbrd/" target="_blank"
+                        class="w-full sm:w-auto px-6 py-3 text-base font-semibold text-white bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-xl hover:bg-[#0077b5]/20 transition flex items-center justify-center shadow-[0_0_15px_rgba(0,119,181,0.1)] hover:shadow-[0_0_25px_rgba(0,119,181,0.2)]">
+                        <i class="ri-linkedin-fill mr-2 text-[#0077b5] text-xl"></i>
+                        LinkedIn
+                    </a>
+                </div>
+
+                <div
+                    class="mt-12 pt-8 border-t border-white/5 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p>© 2025 Nohan BROCHARD</p>
+                    <a href="#admin-login" onclick="triggerHoneypot(); return false;"
+                        class="opacity-0 absolute bottom-0 left-0 w-px h-px cursor-default z-0" tabindex="-1"
+                        title="Administration">
+                        System Admin
+                    </a>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/NohannnBRD" class="hover:text-white transition"><i
+                                class="ri-github-line text-xl"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="ri-twitter-x-line text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Native Modal Structure -->
+        <div id="project-modal" class="fixed inset-0 z-[150] hidden" aria-labelledby="modal-title" role="dialog"
+            aria-modal="true">
+            <div class="fixed inset-0 bg-dark/90 backdrop-blur-md transition-opacity opacity-0"
+                id="project-modal-backdrop" onclick="closeProjectModal()"></div>
+            <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                    <div class="relative transform overflow-hidden rounded-2xl glass-card text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl border border-white/10 opacity-0 scale-95"
+                        id="project-modal-panel">
+                        <div class="absolute right-4 top-4">
+                            <button onclick="closeProjectModal()"
+                                class="text-gray-400 hover:text-white transition p-2 rounded-full hover:bg-white/10"
+                                aria-label="Fermer la modale">
+                                <i class="ri-close-line text-2xl"></i>
+                            </button>
+                        </div>
+                        <div class="p-6 md:p-8">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 shrink-0">
+                                    <i id="pm-icon" class="ri-window-line text-3xl text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white mb-2" id="pm-title">Titre</h3>
+                                    <div class="flex flex-wrap gap-2" id="pm-tags"></div>
+                                </div>
+                            </div>
+
+                            <div class="text-gray-300 text-sm md:text-base leading-relaxed" id="pm-content">
+                            </div>
+
+                            <div class="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-end gap-4">
+                                <button onclick="closeProjectModal()"
+                                    class="w-full md:w-auto px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition text-sm font-medium text-white">Fermer</button>
+                                <a id="pm-link" target="_blank"
+                                    class="w-full md:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition text-sm font-medium text-white shadow-lg flex items-center justify-center gap-2">
+                                    <i class="ri-external-link-line"></i> Voir le support
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="custom-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <div class="fixed inset-0 bg-dark/80 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop"></div>
+
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-2xl glass-card text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-sm border border-white/10 opacity-0 scale-95"
+                    id="modal-panel">
+                    <div class="px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start justify-center text-center">
+                            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
+                                <div
+                                    class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 mb-4">
+                                    <i class="ri-time-line text-3xl text-accent animate-pulse"></i>
+                                </div>
+
+                                <h3 class="text-xl font-bold leading-6 text-white mb-2" id="modal-title">En cours de
+                                    rédaction</h3>
+                                <div class="mt-2">
+                                    <p class="text-sm text-gray-400">
+                                        Ce document n'est pas encore disponible publiquement. Il sera mis en ligne
+                                        prochainement après validation.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <button type="button" onclick="closeModal()"
+                            class="inline-flex w-full justify-center rounded-xl bg-gradient-to-r from-primary to-secondary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-90 sm:w-auto transition ring-1 ring-inset ring-white/10">
+                            Compris
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="honeypot-modal" class="fixed inset-0 z-[200] hidden" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-orange-900/20 backdrop-blur-md transition-opacity" onclick="closeHoneypotModal()">
+        </div>
+
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center">
+
+                <div
+                    class="relative transform overflow-hidden rounded-2xl bg-[#0f172a] border border-orange-500/50 text-left shadow-[0_0_50px_rgba(249,115,22,0.2)] transition-all sm:w-full sm:max-w-lg">
+
+                    <div
+                        class="bg-orange-500/10 px-4 py-3 border-b border-orange-500/20 flex items-center justify-between">
+                        <h3 class="text-orange-500 font-mono font-bold flex items-center gap-2 animate-pulse">
+                            <i class="ri-alert-fill"></i> SECURITY ALERT
+                        </h3>
+                        <span class="text-xs text-orange-400 font-mono">EVENT_ID: 9921</span>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-orange-500/10 rounded-full shrink-0 border border-orange-500/20">
+                                <i class="ri-eye-2-line text-3xl text-orange-500"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-lg mb-1">Pot de miel déclenché ! 🍯</p>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-3">
+                                    Votre IP a été marquée comme suspecte suite à une interaction avec un élément caché.
+                                </p>
+
+                                <div
+                                    class="bg-black/50 p-3 rounded border border-white/5 font-mono text-xs text-gray-500 space-y-1">
+                                    <p>> Detected: Manual Interaction</p>
+                                    <p>> Target: <span class="text-orange-400">/#admin-login</span> (Hidden)</p>
+                                    <p>> Action: <span class="text-red-400">Flagged as curious Recruiter</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900/50 px-6 py-4 flex flex-row-reverse border-t border-white/5">
+                        <button type="button" onclick="closeHoneypotModal()"
+                            class="inline-flex w-full justify-center rounded-lg bg-orange-600 px-4 py-2.5 text-sm font-bold text-white shadow-lg hover:bg-orange-500 sm:w-auto transition-all hover:scale-105 active:scale-95">
+                            Bien joué, je suis démasqué 🏳️
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const close = document.getElementById('close-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            menu.classList.toggle('translate-x-full');
+        }
+
+        btn.addEventListener('click', toggleMenu);
+        close.addEventListener('click', toggleMenu);
+        links.forEach(l => l.addEventListener('click', toggleMenu));
+
+        // Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.glass-card').forEach((el) => {
+            el.classList.add('transition', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+
+        // Gestion de la Modale
+        const modal = document.getElementById('custom-modal');
+        const backdrop = document.getElementById('modal-backdrop');
+        const panel = document.getElementById('modal-panel');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            // Petit délai pour permettre l'animation CSS
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                panel.classList.remove('opacity-0', 'scale-95');
+                panel.classList.add('opacity-100', 'scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            backdrop.classList.add('opacity-0');
+            panel.classList.remove('opacity-100', 'scale-100');
+            panel.classList.add('opacity-0', 'scale-95');
+
+            // Attendre la fin de l'animation pour cacher le div
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Fermer si on clique en dehors
+        window.onclick = function (event) {
+            if (event.target == document.querySelector('#custom-modal > div')) {
+                closeModal();
+            }
+        }
+    </script>
+
+    <script>
+        // Configuration des Sources RSS
+        const RSS_SOURCES = {
+            'anssi': {
+                url: "https://www.cert.ssi.gouv.fr/feed/",
+                color: "text-red-400",
+                bg: "bg-red-500/10",
+                border: "border-red-500/20",
+                label: "Alerte CERT-FR"
+            },
+            'itconnect': {
+                url: "https://www.it-connect.fr/feed/",
+                color: "text-blue-400",
+                bg: "bg-blue-500/10",
+                border: "border-blue-500/20",
+                label: "Tuto & SysAdmin"
+            },
+            'thn': {
+                url: "https://feeds.feedburner.com/TheHackersNews",
+                color: "text-green-400",
+                bg: "bg-green-500/10",
+                border: "border-green-500/20",
+                label: "Cyber News (EN)"
+            }
+        };
+
+        let currentTab = 'anssi'; // Onglet par défaut
+        const rssCache = {}; // Cache pour les flux RSS
+
+        // Fonction pour changer d'onglet
+        function switchTab(tabId) {
+            currentTab = tabId;
+
+            // 1. Mise à jour visuelle des boutons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                // Reset du style pour tous
+                btn.className = "tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 border border-transparent";
+            });
+
+            // Style "Actif" pour le bouton cliqué
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            const style = RSS_SOURCES[tabId];
+            // On applique les classes dynamiques selon la source (Rouge pour ANSSI, Bleu pour IT-Connect...)
+            activeBtn.className = `tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${style.bg} ${style.color} ${style.border} border shadow-lg`;
+
+            // 2. Chargement des news
+            fetchNews(tabId);
+        }
+
+        // Fonction principale de récupération
+        async function fetchNews(sourceKey, forceRefresh = false) {
+            const container = document.getElementById('rss-feed-container');
+            const refreshIcon = document.getElementById('refresh-icon');
+
+            // Loader et Animation
+            refreshIcon.classList.add('animate-spin');
+
+            // Utilisation du cache si disponible et qu'on ne force pas le rafraîchissement
+            if (!forceRefresh && rssCache[sourceKey]) {
+                renderArticles(rssCache[sourceKey], sourceKey, container);
+                setTimeout(() => {
+                    refreshIcon.classList.remove('animate-spin');
+                }, 500);
+                return;
+            }
+
+            container.innerHTML = `
+            <div class="col-span-full flex flex-col items-center justify-center py-20 animate-pulse">
+                <i class="ri-download-cloud-2-line text-5xl text-gray-600 mb-4"></i>
+                <p class="text-gray-400">Récupération du flux ${RSS_SOURCES[sourceKey].label}...</p>
+            </div>
+        `;
+
+            try {
+                const rssUrl = RSS_SOURCES[sourceKey].url;
+                // On utilise rss2json pour convertir le XML en JSON utilisable
+                const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.status === 'ok') {
+                    // Sauvegarde dans le cache
+                    rssCache[sourceKey] = data.items.slice(0, 3);
+                    renderArticles(rssCache[sourceKey], sourceKey, container);
+                } else {
+                    throw new Error("Erreur API");
+                }
+            } catch (error) {
+                console.error('Erreur veille:', error);
+                container.innerHTML = `
+                <div class="col-span-full text-center p-6 border border-red-500/30 rounded-xl bg-red-500/10">
+                    <i class="ri-wifi-off-line text-3xl text-red-400 mb-2"></i>
+                    <p class="text-red-300">Impossible de charger le flux.</p>
+                    <button onclick="fetchNews('${sourceKey}', true)" class="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition">Réessayer</button>
+                </div>
+            `;
+            } finally {
+                // Arrêt de l'animation du bouton actualiser
+                setTimeout(() => {
+                    refreshIcon.classList.remove('animate-spin');
+                }, 500);
+            }
+        }
+
+        function renderArticles(articles, sourceKey, container) {
+            container.innerHTML = ''; // On vide le loader
+            const style = RSS_SOURCES[sourceKey];
+
+            articles.forEach((item, index) => {
+                // Nettoyage de la date
+                const dateObj = new Date(item.pubDate);
+                const dateStr = dateObj.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
+
+                // Animation d'apparition en cascade (stagger)
+                const delay = index * 100;
+
+                // Sécurisation de la description (parfois absente)
+                const desc = (item.description || '').replace(/<[^>]*>?/gm, '').substring(0, 120);
+
+                const html = `
+                <article class="glass-card flex flex-col h-full hover:-translate-y-2 transition-all duration-500 opacity-0 animate-fade-in-up" style="animation-delay: ${delay}ms; animation-fill-mode: forwards;">
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-2 py-1 text-xs font-mono rounded ${style.bg} ${style.color} ${style.border} border">${style.label}</span>
+                            <span class="text-xs text-gray-500 flex items-center">
+                                <i class="ri-calendar-line mr-1"></i> ${dateStr}
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-3 leading-snug line-clamp-2 hover:text-accent transition">
+                            <a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
+                        </h3>
+                        <div class="text-gray-400 text-sm mb-6 flex-1 line-clamp-3">
+                            ${desc}...
+                        </div>
+                        
+                        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center text-sm ${style.color} hover:text-white transition group">
+                            Lire l'article <i class="ri-arrow-right-line ml-2 transform group-hover:translate-x-1 transition"></i>
+                        </a>
+                    </div>
+                </article>
+            `;
+                container.innerHTML += html;
+            });
+        }
+
+        // Fonction pour le bouton "Actualiser"
+        function refreshFeed() {
+            fetchNews(currentTab, true);
+        }
+
+        // CSS personnalisé pour l'animation d'apparition
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = `
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+    `;
+        document.head.appendChild(styleSheet);
+
+
+        // Lancement au démarrage (ANSSI par défaut)
+        fetchNews('anssi');
+    </script>
+
+    <script>
+        // Signature Console "Hacker Style"
+        const styleTitle = "color: #6366f1; font-size: 30px; font-weight: bold; text-shadow: 2px 2px 0px #0f172a;";
+        const styleBody = "color: #94a3b8; font-size: 14px; font-family: monospace;";
+        const styleAlert = "color: #06b6d4; font-size: 14px; font-weight: bold;";
+
+        console.clear();
+        console.log("%c⚠ ACCESS LOGGED", "color: red; font-size: 40px; font-weight: bold;");
+        console.log("%cNohan BROCHARD | Portfolio SISR & Pentest", styleTitle);
+        console.log("%c\nVous cherchez une faille ? Ou peut-être un expert en sécurité ?", styleBody);
+        console.log("%c> Initialisation du protocole de recrutement...", styleBody);
+        console.log("%c> Contact direct : contact@nbrd.fr", styleAlert);
+        console.log("\n");
+
+        // --- Projet Modals Data & Logic ---
+        const projectData = {
+            'ad': {
+                title: 'Lab Active Directory', icon: 'ri-windows-fill', tags: ['#Windows', '#Powershell', '#System'],
+                content: `< h4 class="text-white font-bold mb-2" > Contexte</h4 ><p class="mb-4">Mise en place d'une infrastructure d'entreprise sous Windows Server 2022 simulant un environnement réel avec gestion centralisée des utilisateurs.</p><h4 class="text-white font-bold mb-2">Réalisations Techniques</h4><ul class="list-disc list-inside space-y-1 text-gray-400 mb-4"><li>Promotion en contrôleur de domaine (AD DS)</li><li>Configuration DNS intégré à l'AD</li><li>Serveur DHCP avec étendues et exclusions</li><li>Déploiement de GPO (Fonds d'écran, lecteurs réseaux)</li></ul><h4 class="text-white font-bold mb-2">Défi rencontré</h4><p>La gestion fine des droits via GPO a nécessité plusieurs tests pour s'assurer que les utilisateurs n'aient accès qu'aux ressources autorisées.</p>`,
+                link: 'https://gamma.app/docs/Mini-Projet-Active-Directory-3287ri0od6lnaem'
+            },
+            'dhcp': {
+                title: 'Serveur DHCP', icon: 'ri-router-line', tags: ['#Réseau', '#Infra', '#Linux'],
+                content: `< h4 class="text-white font-bold mb-2" > Contexte</h4 ><p class="mb-4">Déploiement d'un service DHCP sécurisé pour gérer l'adressage dynamique d'un réseau multi-VLAN.</p><h4 class="text-white font-bold mb-2">Réalisations Techniques</h4><ul class="list-disc list-inside space-y-1 text-gray-400 mb-4"><li>Configuration des étendues d'adresses (Scopes)</li><li>Exclusions et réservations (MAC adresses)</li><li>Options de routage et configuration DNS poussées aux clients</li><li>Configuration du failover DHCP (Redondance)</li></ul>`,
+                link: 'https://gamma.app/docs/Mini-Projet-DHCP-jowrgtoajyz3c0f'
+            },
+            'glpi': {
+                title: 'Serveur GLPI', icon: 'ri-customer-service-2-line', tags: ['#Ticketing', '#GLPI-Agent', '#Apache'],
+                content: `< h4 class="text-white font-bold mb-2" > Contexte</h4 ><p class="mb-4">Installation d'une solution ITSM open-source pour la gestion de parc informatique et du centre de services (Helpdesk).</p><h4 class="text-white font-bold mb-2">Réalisations Techniques</h4><ul class="list-disc list-inside space-y-1 text-gray-400 mb-4"><li>Installation LAMP sur Ubuntu Server</li><li>Déploiement de GLPI-Agent via GPO pour inventaire automatisé</li><li>Personnalisation des règles de collecte et entités</li></ul>`,
+                link: 'https://gamma.app/docs/Mini-Projet-GLPI-pyaeusp7jy5qgr2'
+            },
+            'mdt': {
+                title: 'Déploiement MDT', icon: 'ri-computer-line', tags: ['#Windows', '#Automation', '#WDS'],
+                content: `< h4 class="text-white font-bold mb-2" > Contexte</h4 ><p class="mb-4">Industrialisation et automatisation du déploiement de postes (Master) via MDT et WDS.</p><h4 class="text-white font-bold mb-2">Réalisations Techniques</h4><ul class="list-disc list-inside space-y-1 text-gray-400 mb-4"><li>Création de l'image de démarrage PXE via WDS</li><li>Importation des OS, drivers et applications dans MDT</li><li>Task Sequences automatisées (Partitionnement, Installation, Jonction domaine)</li><li>Configuration Zero Touch via CustomSettings.ini</li></ul>`,
+                link: 'https://gamma.app/docs/Mini-Projet-Serveur-MDT-qkk9cl7xtg1jyjs'
+            },
+            'dns': {
+                title: 'Serveur DNS', icon: 'ri-earth-line', tags: ['#Network', '#Infra', '#Sécurité'],
+                content: `< h4 class="text-white font-bold mb-2" > Contexte</h4 ><p class="mb-4">Mise en place d'une infrastructure de résolution de noms fiable, vitale pour un domaine d'entreprise.</p><h4 class="text-white font-bold mb-2">Réalisations Techniques</h4><ul class="list-disc list-inside space-y-1 text-gray-400 mb-4"><li>Création de zones de recherche directes et inverses</li><li>Mise en place de redirecteurs et redirecteurs conditionnels</li><li>Enregistrements spécifiques (A, CNAME, MX, PTR)</li><li>Sécurisation des requêtes</li></ul>`,
+                link: 'https://gamma.app/docs/Mini-Projet-DNS-o2g90k0pr6xn8rv'
+            }
+        };
+
+        function openProjectModal(id) {
+            const data = projectData[id];
+            if (!data) return;
+            document.getElementById('pm-title').textContent = data.title;
+            document.getElementById('pm-icon').className = `${data.icon} text - 3xl text - primary`;
+            document.getElementById('pm-tags').innerHTML = data.tags.map(t => `< span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-gray-400 font-mono" > ${t}</span > `).join('');
+            document.getElementById('pm-content').innerHTML = data.content;
+            document.getElementById('pm-link').href = data.link;
+
+            const modal = document.getElementById('project-modal');
+            const backdrop = document.getElementById('project-modal-backdrop');
+            const panel = document.getElementById('project-modal-panel');
+            modal.classList.remove('hidden');
+            setTimeout(() => { backdrop.classList.remove('opacity-0'); panel.classList.remove('opacity-0', 'scale-95'); panel.classList.add('opacity-100', 'scale-100'); }, 10);
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            const backdrop = document.getElementById('project-modal-backdrop');
+            const panel = document.getElementById('project-modal-panel');
+            backdrop.classList.add('opacity-0'); panel.classList.remove('opacity-100', 'scale-100'); panel.classList.add('opacity-0', 'scale-95');
+            setTimeout(() => { modal.classList.add('hidden'); }, 300);
+        }
+
+        // --- Contact Form ---
+        document.getElementById('contact-form')?.addEventListener('submit', function (e) {
+            e.preventDefault(); // Empêche la redirection vers la page Formspree
+
+            const form = this;
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+
+            // État Chargement
+            btn.innerHTML = '<i class="ri-loader-4-line animate-spin text-xl"></i> Envoi en cours...';
+            btn.disabled = true;
+
+            const data = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // C'est un succès
+                        btn.innerHTML = '<i class="ri-check-line text-xl"></i> Message Envoyé !';
+                        btn.classList.add('from-green-500', 'to-emerald-400');
+                        btn.classList.remove('from-primary', 'to-secondary');
+                        form.reset();
+                    } else {
+                        // Erreur depuis l'API, on l'affiche
+                        btn.innerHTML = `< i class="ri-error-warning-line text-xl" ></i > Erreur d'envoi`;
+                        btn.classList.add('from-red-500', 'to-red-400');
+                        btn.classList.remove('from-primary', 'to-secondary');
+                    }
+                })
+                .catch(error => {
+                    // Erreur réseau
+                    btn.innerHTML = '<i class="ri-error-warning-line text-xl"></i> Erreur réseau';
+                    btn.classList.add('from-red-500', 'to-red-400');
+                    btn.classList.remove('from-primary', 'to-secondary');
+                })
+                .finally(() => {
+                    // Peu importe le résultat, après 3s on remet le bouton normal
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.remove('from-green-500', 'to-emerald-400', 'from-red-500', 'to-red-400');
+                        btn.classList.add('from-primary', 'to-secondary');
+                        btn.disabled = false;
+                    }, 3000);
+                });
+        });
+    </script>
+
+    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-8 right-8 p-3 rounded-full bg-primary text-white shadow-lg shadow-primary/40 translate-y-20 opacity-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl z-40"
+        aria-label="Retour en haut de page">
+        <i class="ri-arrow-up-line text-xl"></i>
+    </button>
+
+    <script>
+        // Script pour afficher/cacher le bouton
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTopBtn');
+            if (window.scrollY > 500) {
+                btn.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                btn.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+    </script>
+
+    <script>
+        // Effet Machine à écrire
+        var TxtType = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function () {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // Injection du CSS pour le curseur
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+    </script>
+
+    <canvas id="matrix-canvas"
+        class="fixed inset-0 z-[200] pointer-events-none opacity-0 transition-opacity duration-1000"></canvas>
+
+    <script>
+        // Konami Code & Matrix Effect
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let cursor = 0;
+
+        document.addEventListener('keydown', (e) => {
+            cursor = (e.key === konamiCode[cursor]) ? cursor + 1 : 0;
+            if (cursor === konamiCode.length) {
+                startMatrix();
+                cursor = 0;
+            }
+        });
+
+        function startMatrix() {
+            const canvas = document.getElementById('matrix-canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Afficher le canvas
+            canvas.classList.remove('opacity-0');
+            canvas.style.background = '#000'; // Fond noir
+
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const letters = Array(256).join(1).split('');
+            const fontSize = 16;
+            const columns = canvas.width / fontSize;
+
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#0F0'; // Vert Matrix
+                ctx.font = fontSize + 'px monospace';
+
+                letters.map((y_pos, index) => {
+                    const text = String.fromCharCode(65 + Math.random() * 33);
+                    const x_pos = index * fontSize;
+                    ctx.fillText(text, x_pos, y_pos);
+                    letters[index] = (y_pos > canvas.height + Math.random() * 1e4) ? 0 : y_pos + fontSize;
+                });
+            }
+
+            // Boucle d'animation
+            const interval = setInterval(draw, 33);
+
+            // Arrêter l'effet après 10 secondes (pour ne pas bloquer le site)
+            setTimeout(() => {
+                canvas.classList.add('opacity-0');
+                setTimeout(() => clearInterval(interval), 1000);
+            }, 10000);
+        }
+    </script>
+
+    <div id="boot-screen"
+        class="fixed inset-0 bg-black z-[99999] flex flex-col justify-start p-4 md:p-10 font-mono text-green-500 text-xs md:text-sm overflow-hidden cursor-wait hidden">
+        <div id="boot-text" class="space-y-1"></div>
+    </div>
+
+    <script>
+        // Script de Boot Sequence (CORRIGÉ)
+        document.addEventListener("DOMContentLoaded", function () {
+            const bootScreen = document.getElementById('boot-screen');
+            const bootText = document.getElementById('boot-text');
+
+            // Si l'intro a déjà été jouée, on s'assure qu'on est en haut
+            if (sessionStorage.getItem('bootPlayed')) {
+                window.scrollTo(0, 0);
+                return; // On arrête là
+            }
+
+            // Sinon, on lance l'animation
+            bootScreen.classList.remove('hidden');
+
+            // Empêcher le scroll manuel pendant l'intro
+            document.body.style.overflow = 'hidden';
+
+            const logs = [
+                "[  0.000000] Linux version 6.8.0-kali-amd64 (gcc version 13.2.0) #1 SMP PREEMPT_DYNAMIC",
+                "[  0.234120] ACPI: DSDT 0x000000007A120000 0048C8 (v02 BOCHS  BXPC    00000001 BXPC 00000001)",
+                "[  0.481920] TCP: cubic registered",
+                "[  0.501203] Initializing Nohan_OS kernel...",
+                "[  0.612301] Loading Portfolio Modules...",
+                "[  0.850000] SISR-fs: mounted filesystem with ordered data mode.",
+                "[OK] Reached target Local File Systems.",
+                "[OK] Started Network Manager.",
+                "[OK] Started Security Auditing Service (Wazuh Agent).",
+                "[OK] Reached target Network is Online.",
+                "[  1.102391] Mounting /dev/sda1 (Cyber_Partition)...",
+                "[  1.340120] Loading CSS Injector (Tailwind)...",
+                "[  1.550120] Starting Glassmorphism Engine...",
+                "[OK] Started Apache2 Web Server.",
+                "[OK] Found Target: 127.0.0.1 (Visitor)",
+                "[OK] Establish connection to DGSI_Mainframe...",
+                "Welcome to Nohan BROCHARD Portfolio.",
+                "Starting Graphical Interface..."
+            ];
+
+            let i = 0;
+
+            function typeLog() {
+                if (i < logs.length) {
+                    const line = document.createElement('div');
+
+                    if (logs[i].includes("[OK]")) {
+                        line.innerHTML = logs[i].replace("[OK]", "<span class='text-white font-bold'>[ OK ]</span>");
+                    } else if (logs[i].startsWith("[")) {
+                        line.innerHTML = logs[i].replace(/^\[\s*[0-9\.]+\]/, match => `<span class='text-gray-500'>${match}</span>`);
+                    } else {
+                        line.textContent = logs[i];
+                    }
+
+                    bootText.appendChild(line);
+
+                    // C'est cette ligne qui fait descendre, on la garde pendant l'anim
+                    bootScreen.scrollTop = bootScreen.scrollHeight;
+
+                    i++;
+                    setTimeout(typeLog, Math.random() * 80 + 20);
+                } else {
+                    // FIN DE L'ANIMATION
+                    setTimeout(() => {
+                        // 1. On remonte tout en haut instantanément
+                        window.scrollTo(0, 0);
+
+                        // 2. On réactive le scroll pour l'utilisateur
+                        document.body.style.overflow = 'auto';
+
+                        bootScreen.style.transition = "opacity 0.5s ease-out";
+                        bootScreen.style.opacity = "0";
+                        setTimeout(() => {
+                            bootScreen.style.display = "none";
+                            sessionStorage.setItem('bootPlayed', 'true');
+                        }, 500);
+                    }, 800);
+                }
+            }
+
+            typeLog();
+        });
+    </script>
+
+    <script>
+        // Titre dynamique quand on quitte l'onglet
+        let docTitle = document.title;
+
+        window.addEventListener("blur", () => {
+            document.title = "👀 Reviens ici !";
+            // Ou : "🛑 Session interrompue" / "👀 Reviens ici !"
+        });
+
+        window.addEventListener("focus", () => {
+            document.title = docTitle;
+        });
+    </script>
+
+    <script>
+        // 🛡️ Protection Niveau 1 : Anti-Clic Droit & Raccourcis
+
+        // 1. Bloque le Clic Droit
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // 2. Bloque les raccourcis clavier (F12, Ctrl+U, etc.)
+        document.onkeydown = function (e) {
+            // Bloque F12
+            if (e.keyCode == 123) {
+                return false;
+            }
+            // Bloque Ctrl+Shift+I (Inspecter)
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            // Bloque Ctrl+Shift+J (Console)
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            // Bloque Ctrl+Shift+C (Inspecter élément)
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            // Bloque Ctrl+U (Voir le code source)
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        // Logique du Terminal
+        const termInput = document.getElementById('term-input');
+        const termOutput = document.getElementById('terminal-output');
+        const termBody = document.getElementById('terminal-body');
+
+        // Dictionnaire des commandes
+        const commands = {
+            'help': "Available commands: <span class='text-yellow-400'>about, skills, social, clear, whoami, impec, flag</span>",
+            'whoami': "root (Future Expert Cyber)",
+            'about': "Nohan, étudiant SISR.",
+            'skills': "• <span class='text-accent'>SISR:</span> Windows Server, AD, Linux, VMware<br>• <span class='text-red-400'>Cyber:</span> Pentest, OSINT, Network Analysis",
+            'social': "LinkedIn: <a href='https://www.linkedin.com/in/nohanbrd/' target='_blank' class='text-blue-400 underline'>/in/nohanbrd</a><br>GitHub: <a href='https://github.com/NohannnBRD' target='_blank' class='text-purple-400 underline'>/nohanbrd</a>",
+            'impec': "<span class='text-green-400 font-bold'>Salut ça va ! Impec  !! 👌</span>",
+            'sudo': "<span class='text-red-500'>Permission denied. Nice try. 😉</span>",
+            'flag': "<span class='text-green-400 font-bold'>Bravo ! FLAG{cur10u5_r3cru1t3r_h4ck3r_2026}</span>",
+            'clear': ""
+        };
+
+        // --- FONCTION DE SÉCURITÉ (SANITIZATION) ---
+        // Empêche l'injection de code HTML/JS (XSS)
+        function escapeHTML(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        termInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                const rawInput = this.value;
+                // On nettoie l'entrée pour l'affichage (Sécurité XSS)
+                const safeInput = escapeHTML(rawInput);
+
+                // On traite la commande en minuscule pour la logique
+                const cmd = rawInput.toLowerCase().trim();
+
+                // 1. On crée la ligne d'historique avec l'entrée NETTOYÉE
+                const historyLine = document.createElement('div');
+                historyLine.innerHTML = `
+                <div class='flex items-center mb-1 opacity-70'>
+                    <span class='text-green-500 mr-2'>➜</span>
+                    <span class='text-cyan-400 mr-2'>~</span>
+                    <span class='text-white'>${safeInput}</span> 
+                </div>
+            `;
+                // ^^^ Ici on utilise safeInput, donc si le gars tape <script>, ça affichera "&lt;script&gt;" (texte brut)
+
+                // 2. On traite la réponse
+                let response = "";
+                if (cmd === 'clear') {
+                    termOutput.innerHTML = "";
+                    this.value = "";
+                    return;
+                } else if (commands[cmd]) {
+                    response = `<div class='mb-6 text-gray-200 pl-6 border-l-2 border-white/10'>${commands[cmd]}</div>`;
+                } else if (cmd === "") {
+                    response = "";
+                } else {
+                    // Ici aussi on affiche safeInput pour éviter la faille dans le message d'erreur
+                    response = `<div class='mb-4 text-red-400 pl-6'>Command not found: '${safeInput}'. Type 'help'.</div>`;
+                }
+
+                // 3. On ajoute tout ça au DOM
+                historyLine.innerHTML += response;
+                termOutput.appendChild(historyLine);
+
+                // 4. Reset
+                this.value = "";
+                termBody.scrollTop = termBody.scrollHeight;
+            }
+        });
+    </script>
+
+    <script>
+        // Navigation Fluide sans altérer l'URL
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // 1. On bloque le comportement par défaut (ajouter #... dans l'URL)
+                e.preventDefault();
+
+                // 2. On récupère la cible (ex: #projets)
+                const targetId = this.getAttribute('href');
+
+                // Sécurité pour les liens vides
+                if (targetId === '#' || !targetId) return;
+
+                // 3. On trouve l'élément dans la page
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // 4. On scrolle doucement vers l'élément
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <div id="map-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="fixed inset-0 bg-black/90 backdrop-blur-md" onclick="closeThreatMap()"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div
+                class="w-full h-full max-w-6xl max-h-[80vh] bg-dark border border-white/10 rounded-2xl overflow-hidden relative shadow-2xl">
+                <button onclick="closeThreatMap()"
+                    class="absolute top-4 right-4 z-50 p-2 bg-black/50 text-white rounded-full hover:bg-red-500 transition">
+                    <i class="ri-close-line text-2xl"></i>
+                </button>
+
+                <iframe src="https://threatmap.fortiguard.com/" class="w-full h-full border-none"
+                    title="Live Cyber Attack Map"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openThreatMap() {
+            document.getElementById('map-modal').classList.remove('hidden');
+        }
+        function closeThreatMap() {
+            document.getElementById('map-modal').classList.add('hidden');
+        }
+    </script>
+
+    <script>
+        // Script Honeypot (Pot de miel) - Version Connectée
+        const honeypotModal = document.getElementById('honeypot-modal');
+
+        function triggerHoneypot() {
+            // 1. Logs console
+            console.clear();
+            console.warn("%c🚨 SECURITY ALERT TRIGGERED 🚨", "color: red; font-size: 20px; font-weight: bold;");
+            console.log("Reporting incident to SOC...");
+
+            // 2. Appel silencieux au script PHP (Le vrai signalement)
+            fetch('/webhook.php', {
+                method: 'POST'
+            }).then(() => {
+                console.log("Incident reported successfully.");
+            }).catch(err => {
+                console.error("Failed to report incident.");
+            });
+
+            // 3. Affichage de la modale pour l'utilisateur
+            honeypotModal.classList.remove('hidden');
+
+            return false;
+        }
+
+        function closeHoneypotModal() {
+            honeypotModal.classList.add('hidden');
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === "Escape" && !honeypotModal.classList.contains('hidden')) {
+                closeHoneypotModal();
+            }
+        });
+    </script>
+
+    <script>
+        // Color Theme System
+        const colorThemes = {
+            default: {
+                name: 'Indigo Cyan',
+                primary: '#6366f1',
+                secondary: '#8b5cf6',
+                accent: '#06b6d4'
+            },
+            emerald: {
+                name: 'Émeraude',
+                primary: '#10b981',
+                secondary: '#059669',
+                accent: '#34d399'
+            },
+            rose: {
+                name: 'Rose',
+                primary: '#f43f5e',
+                secondary: '#e11d48',
+                accent: '#fb7185'
+            },
+            amber: {
+                name: 'Ambre',
+                primary: '#f59e0b',
+                secondary: '#d97706',
+                accent: '#fbbf24'
+            },
+            purple: {
+                name: 'Violet',
+                primary: '#a855f7',
+                secondary: '#9333ea',
+                accent: '#c084fc'
+            },
+            ocean: {
+                name: 'Océan',
+                primary: '#0ea5e9',
+                secondary: '#0284c7',
+                accent: '#38bdf8'
+            },
+            sunset: {
+                name: 'Coucher de soleil',
+                primary: '#ef4444',
+                secondary: '#dc2626',
+                accent: '#f97316'
+            },
+            forest: {
+                name: 'Forêt',
+                primary: '#22c55e',
+                secondary: '#16a34a',
+                accent: '#86efac'
+            }
+        };
+
+        const shieldLogo = document.getElementById('shield-logo');
+        const colorPalette = document.getElementById('color-palette');
+        const themeOptionsContainer = document.getElementById('theme-options');
+        const gradientStop1 = document.getElementById('gradient-stop-1');
+        const gradientStop2 = document.getElementById('gradient-stop-2');
+
+        // Generate theme options
+        function renderThemeOptions() {
+            const currentTheme = localStorage.getItem('colorTheme') || 'default';
+            themeOptionsContainer.innerHTML = '';
+
+            Object.entries(colorThemes).forEach(([key, theme]) => {
+                const option = document.createElement('div');
+                option.className = `theme-option ${key === currentTheme ? 'active' : ''}`;
+                option.dataset.theme = key;
+                option.innerHTML = `
+                <div class="theme-colors">
+                    <div class="theme-color-dot" style="background: ${theme.primary}"></div>
+                    <div class="theme-color-dot" style="background: ${theme.secondary}"></div>
+                    <div class="theme-color-dot" style="background: ${theme.accent}"></div>
+                </div>
+                <span class="theme-name">${theme.name}</span>
+            `;
+                option.addEventListener('click', () => applyTheme(key));
+                themeOptionsContainer.appendChild(option);
+            });
+        }
+
+        // Helper function to convert hex to RGB
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : null;
+        }
+
+        // Apply theme
+        function applyTheme(themeKey) {
+            const theme = colorThemes[themeKey];
+            if (!theme) return;
+
+            // Convert hex to RGB for gradient backgrounds
+            const primaryRgb = hexToRgb(theme.primary);
+            const accentRgb = hexToRgb(theme.accent);
+
+            // Update CSS variables
+            document.documentElement.style.setProperty('--color-primary', theme.primary);
+            document.documentElement.style.setProperty('--color-secondary', theme.secondary);
+            document.documentElement.style.setProperty('--color-accent', theme.accent);
+
+            // Update RGB variables for backgrounds
+            document.documentElement.style.setProperty('--color-primary-rgb', primaryRgb);
+            document.documentElement.style.setProperty('--color-accent-rgb', accentRgb);
+
+            // Update SVG gradient
+            if (gradientStop1) gradientStop1.setAttribute('stop-color', theme.primary);
+            if (gradientStop2) gradientStop2.setAttribute('stop-color', theme.accent);
+
+            // Update Tailwind config dynamically
+            if (window.tailwind && window.tailwind.config) {
+                window.tailwind.config.theme.extend.colors.primary = theme.primary;
+                window.tailwind.config.theme.extend.colors.secondary = theme.secondary;
+                window.tailwind.config.theme.extend.colors.accent = theme.accent;
+            }
+
+            // Update elements that use Tailwind classes
+            updateTailwindColors(theme);
+
+            // Save preference
+            localStorage.setItem('colorTheme', themeKey);
+
+            // Update active state
+            document.querySelectorAll('.theme-option').forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.theme === themeKey);
+            });
+
+            // Close palette after selection
+            setTimeout(() => {
+                colorPalette.classList.remove('active');
+            }, 200);
+        }
+
+        // Update elements using Tailwind color classes
+        function updateTailwindColors(theme) {
+            // Update text-accent elements
+            document.querySelectorAll('.text-accent').forEach(el => {
+                el.style.color = theme.accent;
+            });
+
+            // Update text-primary elements
+            document.querySelectorAll('.text-primary').forEach(el => {
+                el.style.color = theme.primary;
+            });
+
+            // Update text-secondary elements
+            document.querySelectorAll('.text-secondary').forEach(el => {
+                el.style.color = theme.secondary;
+            });
+
+            // Update bg-primary backgrounds
+            document.querySelectorAll('[class*="bg-primary"]').forEach(el => {
+                if (el.classList.contains('bg-primary/10')) {
+                    el.style.backgroundColor = theme.primary + '1a';
+                } else if (el.classList.contains('bg-primary/20')) {
+                    el.style.backgroundColor = theme.primary + '33';
+                }
+            });
+
+            // Update bg-accent backgrounds
+            document.querySelectorAll('[class*="bg-accent"]').forEach(el => {
+                if (el.classList.contains('bg-accent/10')) {
+                    el.style.backgroundColor = theme.accent + '1a';
+                } else if (el.classList.contains('bg-accent/20')) {
+                    el.style.backgroundColor = theme.accent + '33';
+                }
+            });
+
+            // Update border-primary borders
+            document.querySelectorAll('[class*="border-primary"]').forEach(el => {
+                if (el.classList.contains('border-primary/20')) {
+                    el.style.borderColor = theme.primary + '33';
+                } else if (el.classList.contains('border-primary/30')) {
+                    el.style.borderColor = theme.primary + '4d';
+                }
+            });
+
+            // Update border-accent borders
+            document.querySelectorAll('[class*="border-accent"]').forEach(el => {
+                if (el.classList.contains('border-accent/20')) {
+                    el.style.borderColor = theme.accent + '33';
+                }
+            });
+
+            // Update gradients
+            document.querySelectorAll('[class*="from-primary"]').forEach(el => {
+                el.style.setProperty('--tw-gradient-from', theme.primary);
+            });
+
+            document.querySelectorAll('[class*="to-accent"]').forEach(el => {
+                el.style.setProperty('--tw-gradient-to', theme.accent);
+            });
+
+            document.querySelectorAll('[class*="to-secondary"]').forEach(el => {
+                el.style.setProperty('--tw-gradient-to', theme.secondary);
+            });
+
+            // Update shadow colors
+            document.querySelectorAll('[class*="shadow-primary"]').forEach(el => {
+                el.style.boxShadow = `0 10px 25px ${theme.primary}40`;
+            });
+        }
+
+        // Toggle palette visibility
+        shieldLogo.addEventListener('click', (e) => {
+            e.stopPropagation();
+            colorPalette.classList.toggle('active');
+        });
+
+        // Close palette when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!colorPalette.contains(e.target) && !shieldLogo.contains(e.target)) {
+                colorPalette.classList.remove('active');
+            }
+        });
+
+        // Close palette on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                colorPalette.classList.remove('active');
+            }
+        });
+
+        // Initialize
+        renderThemeOptions();
+        const savedTheme = localStorage.getItem('colorTheme');
+        if (savedTheme && colorThemes[savedTheme]) {
+            applyTheme(savedTheme);
+        }
+        // --- Particles Background System ---
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let w, h;
+
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * w;
+                this.y = Math.random() * h;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2;
+                this.alpha = Math.random() * 0.5 + 0.1;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0) this.x = w;
+                if (this.x > w) this.x = 0;
+                if (this.y < 0) this.y = h;
+                if (this.y > h) this.y = 0;
+            }
+            draw() {
+                ctx.fillStyle = `rgba(148, 163, 184, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 50; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, w, h);
+
+            // Draw lines between close particles
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(148, 163, 184, ${0.1 * (1 - dist / 100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+    </script>
+
+</body>
+
+</html>
